@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../css/style.css">
+
+<!-- Boostrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" 
+    crossorigin="anonymous">
+
+    <title>Funkolandia - Historia</title>
+</head>
+
+<body>
+    <header class="container-fluid">
+        <div class="row">
+            <div class="col-2">
+              <div class="position-absolute top-0  mt-3">
+                <img src="../assets/imagenes/instagramLogoFinal.webp" alt="logoIg" id="logoIg">
+                <img src="../assets/imagenes/facebookLogoFinal.webp" alt="logoFb" id="logoFb">
+                <img src="../assets/imagenes/twitterLogoFinal.webp" alt="logoTw" id="logoTw">
+              </div>
+            </div>
+            <div class="col-8 text-center">
+              <h1 class="tituloSitio mt-5">FUNKOCITY!</h1>
+            </div>
+            <div class="col-2 btn-group-vertical mb-5" role="group">
+                <button class="mb-1 mx-auto me-2" id="botonLogin"><a class="linkBotones" href="">Login</a ></button>
+                <button class="mx-auto me-2" id="botonRegistro"><a class="linkBotones" href="">Registrarse</a></button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="../index.html">INICIO</a>
+              <a class="nav-link" href="../pages/historia.html">HISTORIA</a>
+              <a class="nav-link" href="../pages/comunidad.html">COMUNIDAD</a>
+              <a class="nav-link" href="../pages/tienda.html">TIENDA</a>
+              <a class="nav-link" href="../pages/contacto.html">CONTACTO</a>
+            </div>
+            <div class="navbar bg-body-tertiaty">
+                <div class="container-fluid">
+                    <form class="d-flex" role="search">
+                      <input class="form-control me-1 mt-1" type="search" aria-label="Search">
+                      <button class="btn" type="submit">Buscar</button>
+                    </form>
+                  </div>
+            </div>
+          </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="row mb-5 ">
+            <div class="parrafoUno tituloParrafo text-center mt-4">
+                <h2>CONTACTO</h2>
+            </div>
+            <div class="textoParrafo text-center mt-4">
+                <p>Dejanos tu consulta! La responderemos a la brevedad.</p>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title">Datos personales</h5>
+                  <p class="card-text">Nunca compartiremos sus datos personales con alguien más.</p>
+                  <div class="input-group input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                  </div>
+                  <div class="input-group input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Apellido</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                  </div>
+                  <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">Género</label>
+                    <select class="form-select" id="inputGroupSelect01">
+                      <option selected></option>
+                      <option value="1">Femenino</option>
+                      <option value="2">Masculino</option>
+                      <option value="3">Binario</option>
+                      <option value="4">Otro</option>
+                      <option value="5">Prefiero no decirlo</option>
+                    </select>
+                  </div>
+                  <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">Rango de edad</label>
+                    <select class="form-select" id="inputGroupSelect01">
+                      <option selected></option>
+                      <option value="1">Entre 10 y 19 años</option>
+                      <option value="2">Entre 20 y 40 años</option>
+                      <option value="3">Entre 41 y 60 años</option>
+                      <option value="4">Más de 61 años</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Línea de Funko favorita</h5>
+                    <p class="card-text">Pensalo bien! Sólo podés seleccionar una sola.</p>
+                    <div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault">
+                            <label class="form-check-label" for="flexRadioDefault">
+                                Wacky Wobbler
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault">
+                            <label class="form-check-label" for="flexRadioDefault">
+                                Pop!
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault">
+                            <label class="form-check-label" for="flexRadioDefault">
+                                Vinyl Soda
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault">
+                            <label class="form-check-label" for="flexRadioDefault">
+                                Vinyl Gold
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault">
+                            <label class="form-check-label" for="flexRadioDefault">
+                                Games
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault">
+                            <label class="form-check-label" for="flexRadioDefault">
+                                Mystery Minis
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault">
+                            <label class="form-check-label" for="flexRadioDefault">
+                                Plush
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault">
+                            <label class="form-check-label" for="flexRadioDefault">
+                                Popsies
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault" checked>
+                            <label class="form-check-label" for="flexRadioDefault">
+                                Dorbz
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Licencias favoritas</h5>
+                    <p class="card-text">En esta oportunidad podés seleccionar más de un personaje.</p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Marvel
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" check>
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Star Wars
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" check>
+                        <label class="form-check-label" for="flexCheckDefault">
+                          DC
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" check>
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Disney
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" check>
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Harry Potter
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" check>
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Shows de TV
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" check>
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Shows de TV animados
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" check>
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Deporte
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" check>
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Música
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <div class="row justify-content-center">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Tu consulta</h5>
+                    <div class="mb-3" style="height: 200px;">
+                        <label for="exampleFormControlTextarea1" class="form-label"></label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Escribe tu consulta aquí." rows="3"></textarea>
+                      </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mb-5">
+            <div class="textoParrafo mt-4">
+                <p>Deseo recibir novedades</p>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault10">
+                    <label class="form-check-label" for="flexRadioDefault10">
+                        Si
+                    </label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault11" checked>
+                    <label class="form-check-label" for="flexRadioDefault11">
+                        No
+                    </label>
+                </div>
+                <div class="mt-3 text-end">
+                    <a href="#" class="btn btn-primary">Enviar</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    
+    <footer>
+        <div class="container d-flex justify-content-center">
+          <p class="mt-4">Funkocity! Argentina</p>
+        </div>
+    </footer>
+
+    <!-- Script Boostrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" 
+crossorigin="anonymous">
+</script>
+
+</body>
+</html>

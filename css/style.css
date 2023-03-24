@@ -1,0 +1,288 @@
+@font-face {
+    font-family: "armata";
+    src: url(../assets/fonts/Armata/Armata-Regular.ttf); }
+  
+@font-face {
+    font-family: "milks";
+    src: url(../assets/fonts/Milks/tt-milks-casual-pie-inline.ttf); }
+  
+@font-face {
+    font-family: "engle";
+    src: url(../assets/fonts/Englebert/Englebert.ttf); }
+  
+* {
+    margin: 0;
+    padding: 0; 
+}
+
+body{
+    height: 100vh;
+}
+
+
+/* HEADER */
+
+header{
+    height: 20vh;
+}
+
+.tituloSitio{
+    font-family: "milks";
+    color: #1895cf;
+    font-size: 96px;
+    font-weight: lighter;
+    text-align: center;
+}
+
+a:link, :visited, :active{
+    text-decoration: none; 
+}
+
+#logoIg{
+    height: 35px;
+    width: 35px;
+}
+
+#logoFb{
+    height: 35px;
+    width: 35px;
+}    
+
+#logoTw{ 
+    height: 35px;
+    width: 35px;
+    grid-area: tw;
+    align-self: start; 
+}
+
+#botonLogin{
+    width: 150px;
+    height:40px;
+    border-radius: 14px;
+    background-color: white;
+    border: #1895cf solid 3px;
+    font-family: "armata";
+    font-weight: bold;
+    }
+
+#botonLogin a{
+    color: black;
+}
+
+#botonLogin:hover{
+        background-color: #1895cf;
+        color: white !important;
+    }
+
+#botonLogin a:hover{
+    color: white;
+}
+
+#botonRegistro{
+    width: 150px;
+    height:40px;
+    color: black;
+    border-radius: 14px;
+    background-color: white;
+    border: #1895cf solid 3px;
+    font-family: "armata";
+    font-weight: bold;
+}
+
+#botonRegistro a{
+    color: black;
+}
+
+#botonRegistro:hover{
+    background-color: #1895cf;
+    color: white !important;
+}
+
+#botonRegistro a:hover{
+    color: white;
+}
+
+
+/* NAV */
+
+nav{
+    background-color: #1895cf;
+    height: 10vh;
+    justify-content: center !important;
+}
+
+.navbar{
+    --bs-navbar-nav-link-padding-x: 64px !important;
+}
+
+.nav-link{
+    color: white !important;
+    font-weight: bolder !important;
+    font-family: "armata" !important;
+    font-size: 26px !important;
+}
+
+.btn{
+    color: white !important;
+    font-family: "armata" !important;
+    font-weight: bold !important;
+    font-size: 22px !important;
+}
+
+
+.form-control{
+    border-radius: 17px !important;
+    height: 40px !important;
+}
+
+
+/* MAIN INDEX*/
+
+.card-title{
+    font-family: "armata" !important;
+    font-weight: bolder;
+    font-size: 23px !important;
+}
+
+.card-text{
+    font-family: "armata" !important;
+    font-weight: 500;
+    font-size: 18px !important;
+}
+
+iframe{
+    width: 399px;
+    height: 249px;
+    border-radius: 10px;
+}
+
+
+#portadaDeFotos{
+    width: 375px;
+    height: 249px;
+    border-radius: 10px;
+}
+
+.picSpider{
+    background-image: url(../assets/imagenes/wallStars.webp);
+}
+
+#spiderManPortada{
+    width: 500px;
+    height: 500px;
+    translate: 300px;
+}
+
+.slogan{
+    color: black;
+    font-family: "milks";
+    font-size: 45px;
+    translate: -200px;
+}
+
+/* MAIN HISTORIA */
+
+.textoParrafo{
+    font-family: "armata";
+    font-size: 18px;
+    line-height: 32px;
+    text-align: justify;
+}
+
+#fotoTiendaFunko{
+    width: 600px;
+    height: 370px;
+}
+
+.fotoParaMobil{
+    display: none;
+}
+
+#fotoTiendaFunkoDos{
+    width: 500px;
+    height: 370px;     
+}
+
+#fotoHileraPops{
+    width: 99%;
+} 
+
+
+/* MAIN COMUNIDAD */
+
+.tituloComunidad{
+    font-family: "armata";
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.textoComunidad{
+    font-family: "armata";
+    font-size: 20px;
+}
+
+.foro, .telegram, .discord{
+    animation-name: animTeleg;
+    animation-duration: 1s;
+}
+
+@keyframes animTeleg {
+    from{
+        transform: translate(0) scale(0);
+    }to{
+        transform: translate(100) scale(1.2);
+    }
+}
+
+#logoForo{
+    width: 200px;
+    height: 200px;  
+}
+
+#logoTelegram{
+    width: 200px;
+    height: 200px;  
+}
+
+#logoDiscord{
+    width: 200px;
+    height: 200px;  
+}
+
+
+/* MAIN TIENDA */
+
+.list-group{
+    --bs-list-group-border-color: #9abfe3 !important;
+}
+
+.list-group-item{
+    font-size: x-large !important;
+}
+
+/* MAIN CONTACTO */
+
+.form-control {
+    border-radius: 0px !important;
+}
+
+textarea.form-control{
+    height: 180px !important;
+}
+
+.btn-primary{
+    font-family: "armata" !important;
+    font-size: 20px !important;
+    --bs-btn-bg: #1895cf;
+}
+
+/* FOOTER */
+
+footer{
+    background-color: #1895cf;
+    color: white;
+    height: 10vh;
+    font-family: "armata";
+    font-size: 25px;
+    font-weight: bold;
+}
