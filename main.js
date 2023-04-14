@@ -42,7 +42,6 @@ while ((diaNacUsuario <= 0 || diaNacUsuario >= 32) || diaNacUsuario == false || 
 }
 diaNacimiento()
 
-
    
 mesNacimiento = () =>{
   let mesNacUsuario
@@ -114,81 +113,102 @@ while (anioNacUsuario > 2005 || anioNacUsuario == " " || isNaN(anioNacUsuario)){
 }
 anioNacimiento()
 
-/* Carrito de compra */
-let totalCarrito = 0;
 
-function agregarProducto(precio) {
+
+/* Carrito de compra */
+let totalCarrito = 0
+
+/* function agregarProducto(precio) {
   let cantidad = parseInt(prompt("Ingresa la cantidad que quieres agregar al carrito"));
   totalCarrito += cantidad * precio;
+} */
+
+let cantidad
+function cantidadProducto(){
+  cantidad = parseInt(prompt("Ingresa la cantidad que quieres agregar al carrito"))
 }
 
+function agregarCarrito(precio){
+  totalCarrito += cantidad * precio;
+}
 
 const carrito = []
 function productos() {
   let agregarOtro = true;
   while (agregarOtro) {
-    let productosElegido = parseInt(prompt("Ingresa el número que corresponde al producto que queres agregar al carrito de compras.\n 1) Funko Pop! Iron Man $5500 \n 2) Funko Pop! Darth Vader $6500 \n 3) Juego Funko Verse Rick & Morty $14800 \n 4) Pin Spiderman $1200 \n 5) Vinyl Soda Superman $4900 \n 6) Mochila Avengers $25450"));
+    let productosElegido = parseInt(prompt("Ingresa el número que corresponde al producto que queres agregar al carrito de compras.\n 1) Funko Pop! Iron Man $5545.23 \n 2) Funko Pop! Darth Vader $6581.56 \n 3) Juego Funko Verse Rick & Morty $14809.99 \n 4) Pin Spiderman $1209.99 \n 5) Vinyl Soda Superman $4964.64 \n 6) Mochila Avengers $25459.99"));
 
     switch (productosElegido) {
       case 1:
         carrito.push({
-          valor: 5500,
+          valor: 5545.23,
           nombreProducto: "Funko Pop! Iron Man",
           categoria: "Pop",
-          cantidad: agregarProducto(5500)
+          cantidad : cantidad
         })
-        alert("Seleccionaste un Funko Pop! Iron Man y su valor es de $5500");
-        agregarProducto(5500);
+        alert("Seleccionaste un Funko Pop! Iron Man y su valor es de $5545.23");
+        cantidadProducto()
+        agregarCarrito(5500.23)
         break;
 
       case 2:
         carrito.push({
-          valor: 6500,
+          valor: 6581.56,
           nombreProducto: "Funko Pop! Darth Vader",
-          categoria: "Pop"
+          categoria: "Pop",
+          cantidad : cantidad
         })
-        alert("Seleccionaste un Funko Pop! Darth Vader y su valor es de $6500");
-        agregarProducto(6500);
+        alert("Seleccionaste un Funko Pop! Darth Vader y su valor es de $6581.56");
+        cantidadProducto()
+        agregarCarrito(6581.56)
         break;
 
       case 3:
         carrito.push({
-          valor: 14800,
+          valor: 14809.99,
           nombreProducto: "Juego Funko Verse Rick & Morty",
-          categoria: "Juegos"
+          categoria: "Juegos",
+          cantidad : cantidad
         })
-        alert("Seleccionaste un Juego Funko Verse Rick & Morty y su valor es de $14800");
-        agregarProducto(14800);
+        alert("Seleccionaste un Juego Funko Verse Rick & Morty y su valor es de $14809.99");
+        cantidadProducto()
+        agregarCarrito(14809.99)
         break;
 
       case 4:
         carrito.push({
-          valor: 1200,
+          valor: 1209.99,
           nombreProducto: "Pin Spiderman",
-          categoria: "Accesorios"
+          categoria: "Accesorios",
+          cantidad : cantidad
         })
-        alert("Seleccionaste un Pin Spiderman y su valor es de $1200");
-        agregarProducto(1200);
+        alert("Seleccionaste un Pin Spiderman y su valor es de $1209.99");
+        cantidadProducto()
+        agregarCarrito(1209.99)
         break;
 
       case 5:
         carrito.push({
-          valor: 4900,
+          valor: 4964.64,
           nombreProducto: "Vinyl Soda Superman",
-          categoria: "Vinyl"
+          categoria: "Vinyl",
+          cantidad : cantidad
         })
-        alert("Seleccionaste un Vinyl Soda Superman y su valor es de $4900");
-        agregarProducto(4900);
+        alert("Seleccionaste un Vinyl Soda Superman y su valor es de $4964.64");
+        cantidadProducto()
+        agregarCarrito(4964.64)
         break;
 
       case 6:
         carrito.push({
-          valor: 25450,
+          valor: 25459.99,
           nombreProducto: "Mochila Avengers",
-          categoria: "Indumentaria"
+          categoria: "Indumentaria",
+          cantidad : cantidad
         })
-        alert("Seleccionaste una Mochila Avengers y su valor es de $25450");
-        agregarProducto(25450);
+        alert("Seleccionaste una Mochila Avengers y su valor es de $25459.99");
+        cantidadProducto()
+        agregarCarrito(25459.99)
         break;
 
       default:
@@ -204,12 +224,12 @@ productos();
 function mostrarCarrito() {
   console.log("Productos en el carrito:");
   carrito.forEach(producto => {
-    console.log("- " + producto.nombreProducto + " (" + producto.categoria + "): $" + producto.valor);
+    console.log("- " + producto.nombreProducto + " (" + producto.categoria + "): $" + producto.valor + producto.cantidad);
   });
   console.log("Total del carrito: $" + totalCarrito);
   alert("Productos en el carrito:\n" + 
-        carrito.map(producto => "- Nombre: " + producto.nombreProducto + " / Categoria: " + producto.categoria + " / Precio: $" + producto.valor).join("\n") +
-        "\nTotal del carrito: $" + totalCarrito);
+        carrito.map(producto => "- Nombre: " + producto.nombreProducto + " / Categoria: " + producto.categoria + " / Precio: $" + producto.valor + " / Cantidad: " + producto.cantidad).join("\n") +
+        "\nTotal del carrito: $" + Math.floor(totalCarrito));
 }
 mostrarCarrito()
 
@@ -246,6 +266,50 @@ venta()
 
 /* Agradecimiento */
 function agradecimiento(){
-    alert("¡Muchas gracias por tu compra! Que la disfrutes!")
+    alert(nombreUsuario + "¡Muchas gracias por tu compra! Que la disfrutes!")
 }
 agradecimiento()
+
+
+
+
+
+/* const stock = [{
+  id: 1,
+  nombreProductoStock: "Funko Pop! Iron Man",
+  categoriaProductoStock: "Pop",
+  valorProductoStock: 5545.2
+},
+{
+  id: 1,
+  nombreProductoStock: "Funko Pop! Iron Man",
+  categoriaProductoStock: "Pop",
+  valorProductoStock: 5545.2
+}
+{
+  id: 1,
+  nombreProductoStock: "Funko Pop! Iron Man",
+  categoriaProductoStock: "Pop",
+  valorProductoStock: 5545.2
+}
+{
+  id: 1,
+  nombreProductoStock: "Funko Pop! Iron Man",
+  categoriaProductoStock: "Pop",
+  valorProductoStock: 5545.2
+}
+{
+  id: 1,
+  nombreProductoStock: "Funko Pop! Iron Man",
+  categoriaProductoStock: "Pop",
+  valorProductoStock: 5545.2
+}
+{
+  id: 1,
+  nombreProductoStock: "Funko Pop! Iron Man",
+  categoriaProductoStock: "Pop",
+  valorProductoStock: 5545.2
+}
+]
+ */
+
