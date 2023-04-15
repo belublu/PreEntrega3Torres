@@ -6,14 +6,14 @@ bienvenida()
 
 
 /* Ingreso de datos personales */
+let nombreUsuario
 nombre = () => {
-  let nombreUsuario = prompt ("Ingresa tu nombre y apellido")
+  nombreUsuario = prompt ("Ingresa tu nombre y apellido")
   nombreUsuario = nombreUsuario.toLowerCase()
   console.log (nombreUsuario)
   while(nombreUsuario == " " || nombreUsuario == false){
       alert("Nombre y apellido ingresado incorrectamente. Intentalo nuevamente.")
       nombreUsuario = prompt ("Ingresa tu nombre y apellido")
-      
   }
 }
 nombre()
@@ -24,7 +24,7 @@ edad = () =>{
   console.log (edadUsuario)
   while (edadUsuario <= 18){
       alert ("No podes continuar con el registro ya que sos menor de edad")
-      edadUsuario = prompt ("Ingrese su edad")
+      edadUsuario = prompt ("Ingresa tu edad")
       console.log (edadUsuario)
   }
 }
@@ -124,14 +124,14 @@ function cantidadProducto(){
 }
 
 function agregarCarrito(precio){
-  totalCarrito += cantidad * precio;
+  totalCarrito += cantidad * precio
 }
 
 const carrito = []
 function productos() {
-  let agregarOtro = true;
+  let agregarOtro = true
   while (agregarOtro) {
-    let productosElegido = parseInt(prompt("Ingresa el número que corresponde al producto que queres agregar al carrito de compras.\n 1) Funko Pop! Iron Man $5545.23 \n 2) Funko Pop! Darth Vader $6581.56 \n 3) Juego Funko Verse Rick & Morty $14809.99 \n 4) Pin Spiderman $1209.99 \n 5) Vinyl Soda Superman $4964.64 \n 6) Mochila Avengers $25459.99"));
+    let productosElegido = parseInt(prompt("Ingresa el número que corresponde al producto que queres agregar al carrito de compras.\n 1) Funko Pop! Iron Man $5545.23 \n 2) Funko Pop! Darth Vader $6581.56 \n 3) Juego Funko Verse Rick & Morty $14809.99 \n 4) Pin Spiderman $1209.99 \n 5) Vinyl Soda Superman $4964.64 \n 6) Mochila Avengers $25459.99"))
     cantidadProducto()
     switch (productosElegido) {
       case 1:
@@ -142,8 +142,8 @@ function productos() {
           categoria: "Pop",
           cantidad : cantidad
         })
-        alert("Seleccionaste un Funko Pop! Iron Man y su valor es de $5545.23");
-        agregarCarrito(5500.23)
+        alert("Seleccionaste un Funko Pop! Iron Man y su valor es de $5545.23")
+        agregarCarrito(5545.23)
         break;
 
       case 2:
@@ -154,7 +154,7 @@ function productos() {
           categoria: "Pop",
           cantidad : cantidad
         })
-        alert("Seleccionaste un Funko Pop! Darth Vader y su valor es de $6581.56");
+        alert("Seleccionaste un Funko Pop! Darth Vader y su valor es de $6581.56")
         agregarCarrito(6581.56)
         break;
 
@@ -166,7 +166,7 @@ function productos() {
           categoria: "Juegos",
           cantidad : cantidad
         })
-        alert("Seleccionaste un Juego Funko Verse Rick & Morty y su valor es de $14809.99");
+        alert("Seleccionaste un Juego Funko Verse Rick & Morty y su valor es de $14809.99")
         agregarCarrito(14809.99)
         break;
 
@@ -178,7 +178,7 @@ function productos() {
           categoria: "Accesorios",
           cantidad : cantidad
         })
-        alert("Seleccionaste un Pin Spiderman y su valor es de $1209.99");
+        alert("Seleccionaste un Pin Spiderman y su valor es de $1209.99")
         agregarCarrito(1209.99)
         break;
 
@@ -190,7 +190,7 @@ function productos() {
           categoria: "Vinyl Soda",
           cantidad : cantidad
         })
-        alert("Seleccionaste un Vinyl Soda Superman y su valor es de $4964.64");
+        alert("Seleccionaste un Vinyl Soda Superman y su valor es de $4964.64")
         agregarCarrito(4964.64)
         break;
 
@@ -202,7 +202,7 @@ function productos() {
           categoria: "Indumentaria",
           cantidad : cantidad
         })
-        alert("Seleccionaste una Mochila Avengers y su valor es de $25459.99");
+        alert("Seleccionaste una Mochila Avengers y su valor es de $25459.99")
         agregarCarrito(25459.99)
         break;
 
@@ -221,25 +221,24 @@ const eliminarProducto = () => {
   itemEliminar = prompt ("¿Desea eliminar algún producto de su carrito? Si es así, seleccione el número correspondiente al producto a eliminar y sino, presione cancelar:\n 1) Funko Pop! Iron Man $5545.23 \n 2) Funko Pop! Darth Vader $6581.56 \n 3) Juego Funko Verse Rick & Morty $14809.99 \n 4) Pin Spiderman $1209.99 \n 5) Vinyl Soda Superman $4964.64 \n 6) Mochila Avengers $25459.99")
   const index = carrito.findIndex(item => item.id == itemEliminar)
   if(index != -1 && carrito[index].cantidad > 1){
-    carrito[index].cantidad -= 1;
-    totalCarrito -= carrito[index].valor;
+    carrito[index].cantidad -= 1
+    totalCarrito -= carrito[index].valor
+  } else if(index != -1 && carrito[index].cantidad == 1){
+    totalCarrito -= carrito[index].valor
     carrito.splice(index, 1)
-  } /* else if(index != -1 && carrito[index].cantidad == 1) {
-    totalCarrito -= carrito[index].valor;
-    
-  } */
+  }
   console.log (itemEliminar)
 }
 eliminarProducto()
 
 
 function mostrarCarrito() {
-  console.log("Productos en el carrito:");
+  console.log("Productos en el carrito:")
   carrito.forEach(producto => {
-    console.log("- " + producto.nombreProducto + " (" + producto.categoria + "):\nPrecio: $" + producto.valor + "\nCantidad: " + producto.cantidad);
+    console.log("- " + producto.nombreProducto + " (" + producto.categoria + "):\nPrecio: $" + producto.valor + "\nCantidad: " + producto.cantidad)
   });
-  console.log("Total del carrito: $" + totalCarrito);
-  console.log("Total del carrito redondeado a favor del cliente : $" + Math.floor(totalCarrito));
+  console.log("Total del carrito: $" + totalCarrito)
+  console.log("Total del carrito redondeado a favor del cliente : $" + Math.floor(totalCarrito))
   alert("Productos en el carrito:\n" + 
         carrito.map(producto => "- Nombre: " + producto.nombreProducto + " / Categoria: " + producto.categoria + " / Precio: $" + producto.valor + " / Cantidad: " + producto.cantidad).join("\n") +
         "\nTotal del carrito: $" + Math.floor(totalCarrito));
@@ -272,7 +271,7 @@ envio()
 /* Venta */
 let totalCompra = totalCarrito + valorEnvio
 function venta(){
-    alert ("El total de tu compra incluido el envío es de: $" + totalCompra)
+    alert ("El total de tu compra incluido el envío es de: $" + Math.floor(totalCompra))
 }
 venta()
 
