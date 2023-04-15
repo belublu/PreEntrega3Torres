@@ -214,18 +214,24 @@ function productos() {
     agregarOtro = confirm("¿Querés agregar otro producto?")
   }
 }
+
 productos();
 
-
-const eliminarProducto = () =>{
+const eliminarProducto = () => {
   itemEliminar = prompt ("¿Desea eliminar algún producto de su carrito? Si es así, seleccione el número correspondiente al producto a eliminar y sino, presione cancelar:\n 1) Funko Pop! Iron Man $5545.23 \n 2) Funko Pop! Darth Vader $6581.56 \n 3) Juego Funko Verse Rick & Morty $14809.99 \n 4) Pin Spiderman $1209.99 \n 5) Vinyl Soda Superman $4964.64 \n 6) Mochila Avengers $25459.99")
   const index = carrito.findIndex(item => item.id == itemEliminar)
-  if (index != -1){
-    carrito.splice[index,1]
-  }
-  console.log(itemEliminar)
+  if(index != -1 && carrito[index].cantidad > 1){
+    carrito[index].cantidad -= 1;
+    totalCarrito -= carrito[index].valor;
+    carrito.splice(index, 1)
+  } /* else if(index != -1 && carrito[index].cantidad == 1) {
+    totalCarrito -= carrito[index].valor;
+    
+  } */
+  console.log (itemEliminar)
 }
 eliminarProducto()
+
 
 function mostrarCarrito() {
   console.log("Productos en el carrito:");
