@@ -49,53 +49,53 @@ mesNacimiento = () =>{
   do {
     mesNacUsuario = prompt ("Ingrese su mes de nacimiento").toLowerCase()
     switch(mesNacUsuario){
-        case "enero":
-            salir = false
-            break
+      case "enero":
+      salir = false
+      break
 
-            case "febrero":
-            salir = false
-            break
+      case "febrero":
+      salir = false
+      break
 
-            case "marzo":
-            salir = false
-            break
+      case "marzo":
+      salir = false
+      break
 
-            case "abril":
-            salir = false
-            break
+      case "abril":
+      salir = false
+      break
 
-            case "mayo":
-            salir = false
-            break
+      case "mayo":
+      salir = false
+      break
 
-            case "junio":
-            salir = false
-            break
+      case "junio":
+      salir = false
+      break
 
-            case "julio":
-            salir = false
-            break
+      case "julio":
+      salir = false
+      break
 
-            case "agosto":
-            salir = false
-            break
+      case "agosto":
+      salir = false
+      break
 
-            case "septiembre":
-            salir = false
-            break
+      case "septiembre":
+      salir = false
+      break
 
-            case "octubre":
-            salir = false
-            break
+      case "octubre":
+      salir = false
+      break
 
-            case "noviembre":
-            salir = false
-            break
+      case "noviembre":
+      salir = false
+      break
 
-            case "diciembre":
-            salir = false
-            break
+      case "diciembre":
+      salir = false
+      break
     }
 } while (salir)
 console.log (mesNacUsuario)
@@ -118,11 +118,6 @@ anioNacimiento()
 /* Carrito de compra */
 let totalCarrito = 0
 
-/* function agregarProducto(precio) {
-  let cantidad = parseInt(prompt("Ingresa la cantidad que quieres agregar al carrito"));
-  totalCarrito += cantidad * precio;
-} */
-
 let cantidad
 function cantidadProducto(){
   cantidad = parseInt(prompt("Ingresa la cantidad que quieres agregar al carrito"))
@@ -137,96 +132,108 @@ function productos() {
   let agregarOtro = true;
   while (agregarOtro) {
     let productosElegido = parseInt(prompt("Ingresa el número que corresponde al producto que queres agregar al carrito de compras.\n 1) Funko Pop! Iron Man $5545.23 \n 2) Funko Pop! Darth Vader $6581.56 \n 3) Juego Funko Verse Rick & Morty $14809.99 \n 4) Pin Spiderman $1209.99 \n 5) Vinyl Soda Superman $4964.64 \n 6) Mochila Avengers $25459.99"));
-
+    cantidadProducto()
     switch (productosElegido) {
       case 1:
         carrito.push({
+          id : 1,
           valor: 5545.23,
-          nombreProducto: "Funko Pop! Iron Man",
+          nombreProducto: "Iron Man",
           categoria: "Pop",
           cantidad : cantidad
         })
         alert("Seleccionaste un Funko Pop! Iron Man y su valor es de $5545.23");
-        cantidadProducto()
         agregarCarrito(5500.23)
         break;
 
       case 2:
         carrito.push({
+          id : 2,
           valor: 6581.56,
-          nombreProducto: "Funko Pop! Darth Vader",
+          nombreProducto: "Darth Vader",
           categoria: "Pop",
           cantidad : cantidad
         })
         alert("Seleccionaste un Funko Pop! Darth Vader y su valor es de $6581.56");
-        cantidadProducto()
         agregarCarrito(6581.56)
         break;
 
       case 3:
         carrito.push({
+          id : 3,
           valor: 14809.99,
-          nombreProducto: "Juego Funko Verse Rick & Morty",
+          nombreProducto: "Funko Verse Rick & Morty",
           categoria: "Juegos",
           cantidad : cantidad
         })
         alert("Seleccionaste un Juego Funko Verse Rick & Morty y su valor es de $14809.99");
-        cantidadProducto()
         agregarCarrito(14809.99)
         break;
 
       case 4:
         carrito.push({
+          id : 4,
           valor: 1209.99,
-          nombreProducto: "Pin Spiderman",
+          nombreProducto: "Spiderman",
           categoria: "Accesorios",
           cantidad : cantidad
         })
         alert("Seleccionaste un Pin Spiderman y su valor es de $1209.99");
-        cantidadProducto()
         agregarCarrito(1209.99)
         break;
 
       case 5:
         carrito.push({
+          id: 5,
           valor: 4964.64,
-          nombreProducto: "Vinyl Soda Superman",
-          categoria: "Vinyl",
+          nombreProducto: "Superman",
+          categoria: "Vinyl Soda",
           cantidad : cantidad
         })
         alert("Seleccionaste un Vinyl Soda Superman y su valor es de $4964.64");
-        cantidadProducto()
         agregarCarrito(4964.64)
         break;
 
       case 6:
         carrito.push({
+          id: 6,
           valor: 25459.99,
-          nombreProducto: "Mochila Avengers",
+          nombreProducto: "Avengers",
           categoria: "Indumentaria",
           cantidad : cantidad
         })
         alert("Seleccionaste una Mochila Avengers y su valor es de $25459.99");
-        cantidadProducto()
         agregarCarrito(25459.99)
         break;
 
       default:
-        alert("La opción ingresada no es correcta. Ingresa un número del 1 al 6.");
+        alert("La opción ingresada no es correcta. Ingresa un número del 1 al 6.")
         break;
     }
 
-    agregarOtro = confirm("¿Quieres agregar otro producto?");
+    agregarOtro = confirm("¿Querés agregar otro producto?")
   }
 }
 productos();
 
+
+const eliminarProducto = () =>{
+  itemEliminar = prompt ("¿Desea eliminar algún producto de su carrito? Si es así, seleccione el número correspondiente al producto a eliminar y sino, presione cancelar:\n 1) Funko Pop! Iron Man $5545.23 \n 2) Funko Pop! Darth Vader $6581.56 \n 3) Juego Funko Verse Rick & Morty $14809.99 \n 4) Pin Spiderman $1209.99 \n 5) Vinyl Soda Superman $4964.64 \n 6) Mochila Avengers $25459.99")
+  const index = carrito.findIndex(item => item.id == itemEliminar)
+  if (index != -1){
+    carrito.splice[index,1]
+  }
+  console.log(itemEliminar)
+}
+eliminarProducto()
+
 function mostrarCarrito() {
   console.log("Productos en el carrito:");
   carrito.forEach(producto => {
-    console.log("- " + producto.nombreProducto + " (" + producto.categoria + "): $" + producto.valor + producto.cantidad);
+    console.log("- " + producto.nombreProducto + " (" + producto.categoria + "):\nPrecio: $" + producto.valor + "\nCantidad: " + producto.cantidad);
   });
   console.log("Total del carrito: $" + totalCarrito);
+  console.log("Total del carrito redondeado a favor del cliente : $" + Math.floor(totalCarrito));
   alert("Productos en el carrito:\n" + 
         carrito.map(producto => "- Nombre: " + producto.nombreProducto + " / Categoria: " + producto.categoria + " / Precio: $" + producto.valor + " / Cantidad: " + producto.cantidad).join("\n") +
         "\nTotal del carrito: $" + Math.floor(totalCarrito));
@@ -269,47 +276,3 @@ function agradecimiento(){
     alert(nombreUsuario + "¡Muchas gracias por tu compra! Que la disfrutes!")
 }
 agradecimiento()
-
-
-
-
-
-/* const stock = [{
-  id: 1,
-  nombreProductoStock: "Funko Pop! Iron Man",
-  categoriaProductoStock: "Pop",
-  valorProductoStock: 5545.2
-},
-{
-  id: 1,
-  nombreProductoStock: "Funko Pop! Iron Man",
-  categoriaProductoStock: "Pop",
-  valorProductoStock: 5545.2
-}
-{
-  id: 1,
-  nombreProductoStock: "Funko Pop! Iron Man",
-  categoriaProductoStock: "Pop",
-  valorProductoStock: 5545.2
-}
-{
-  id: 1,
-  nombreProductoStock: "Funko Pop! Iron Man",
-  categoriaProductoStock: "Pop",
-  valorProductoStock: 5545.2
-}
-{
-  id: 1,
-  nombreProductoStock: "Funko Pop! Iron Man",
-  categoriaProductoStock: "Pop",
-  valorProductoStock: 5545.2
-}
-{
-  id: 1,
-  nombreProductoStock: "Funko Pop! Iron Man",
-  categoriaProductoStock: "Pop",
-  valorProductoStock: 5545.2
-}
-]
- */
-
