@@ -1,124 +1,148 @@
+/* Consulta tipo de usuario */
+let nombreUsuario
+let cantidad
+let totalCarrito = 0
+
+
+function tipodeUsuario(){
+  const consultaTipoUsuario = parseInt(prompt("Bienvenido! Ingresa la opción correcta. ¿Qué usuario sos?: 1) Administrador 2) Cliente"))
+  if(consultaTipoUsuario === 1 ){
+    bienvenidaAdmin()
+  }else{
+    bienvenidaCliente()
+    inicializar()
+    productos()
+    eliminarProducto()
+    mostrarCarrito()
+    envio()
+    venta()
+    agradecimiento()
+
+  }
+}
+tipodeUsuario()
+
+/* Login de administradores*/
 /* Bienvenida */
-function bienvenida (){
+function bienvenidaAdmin (){
+  alert ("Bienvenido! Ingresa tus datos")
+}
+
+
+/* Login de cliente*/
+/* Bienvenida */
+function bienvenidaCliente (){
     alert ("Bienvenido! Comencemos con el registro para realizar tu compra")
 }
-bienvenida()
 
-
-/* Ingreso de datos personales */
-let nombreUsuario
-nombre = () => {
-  nombreUsuario = prompt ("Ingresa tu nombre y apellido")
-  nombreUsuario = nombreUsuario.toLowerCase()
-  console.log (nombreUsuario)
-  while(nombreUsuario == " " || nombreUsuario == false){
-      alert("Nombre y apellido ingresado incorrectamente. Intentalo nuevamente.")
-      nombreUsuario = prompt ("Ingresa tu nombre y apellido")
-  }
-}
-nombre()
-
-
-edad = () =>{
-  let edadUsuario = prompt ("Ingresa tu edad")
-  console.log (edadUsuario)
-  while (edadUsuario <= 18){
-      alert ("No podes continuar con el registro ya que sos menor de edad")
-      edadUsuario = prompt ("Ingresa tu edad")
-      console.log (edadUsuario)
-  }
-}
-edad()
-
-
-diaNacimiento = () => {
-  let diaNacUsuario = parseInt(prompt("Ingresa tu día de nacimiento"))
-console.log (diaNacUsuario)
-while ((diaNacUsuario <= 0 || diaNacUsuario >= 32) || diaNacUsuario == false || diaNacUsuario == " " || isNaN(diaNacUsuario)){
-    alert ("Día ingresado incorrectamente")
-    diaNacUsuario = prompt ("Ingrese su día de nacimiento")
-    console.log (diaNacUsuario)
-}
-}
-diaNacimiento()
-
-   
-mesNacimiento = () =>{
-  let mesNacUsuario
-  let salir = true 
-  do {
-    mesNacUsuario = prompt ("Ingrese su mes de nacimiento").toLowerCase()
-    switch(mesNacUsuario){
-      case "enero":
-      salir = false
-      break
-
-      case "febrero":
-      salir = false
-      break
-
-      case "marzo":
-      salir = false
-      break
-
-      case "abril":
-      salir = false
-      break
-
-      case "mayo":
-      salir = false
-      break
-
-      case "junio":
-      salir = false
-      break
-
-      case "julio":
-      salir = false
-      break
-
-      case "agosto":
-      salir = false
-      break
-
-      case "septiembre":
-      salir = false
-      break
-
-      case "octubre":
-      salir = false
-      break
-
-      case "noviembre":
-      salir = false
-      break
-
-      case "diciembre":
-      salir = false
-      break
+function inicializar (){
+  nombre = () => {
+    nombreUsuario = prompt ("Ingresa tu nombre y apellido")
+    nombreUsuario = nombreUsuario.toLowerCase()
+    console.log (nombreUsuario)
+    while(nombreUsuario == " " || nombreUsuario == false){
+        alert("Nombre y apellido ingresado incorrectamente. Intentalo nuevamente.")
+        nombreUsuario = prompt ("Ingresa tu nombre y apellido")
     }
-} while (salir)
-console.log (mesNacUsuario)
-}
-mesNacimiento()
+  }
 
-anioNacimiento = () =>{
-  let anioNacUsuario = parseInt(prompt ("Ingresa tu año de nacimiento"))
-console.log (anioNacUsuario)
-while (anioNacUsuario > 2005 || anioNacUsuario == " " || isNaN(anioNacUsuario)){
-    alert ("Año ingresado incorrectamente.")
-    anioNacUsuario = prompt ("Ingresa tu año de nacimiento")
+  edad = () =>{
+    let edadUsuario = prompt ("Ingresa tu edad")
+    console.log (edadUsuario)
+    while (edadUsuario <= 18){
+        alert ("No podes continuar con el registro ya que sos menor de edad")
+        edadUsuario = prompt ("Ingresa tu edad")
+        console.log (edadUsuario)
+    }
+  }
+
+  diaNacimiento = () => {
+    let diaNacUsuario = parseInt(prompt("Ingresa tu día de nacimiento"))
+    console.log (diaNacUsuario)
+    while ((diaNacUsuario <= 0 || diaNacUsuario >= 32) || diaNacUsuario == false || diaNacUsuario == " " || isNaN(diaNacUsuario)){
+      alert ("Día ingresado incorrectamente")
+      diaNacUsuario = prompt ("Ingrese su día de nacimiento")
+      console.log (diaNacUsuario)
+    }
+  }
+
+  mesNacimiento = () =>{
+    let mesNacUsuario
+    let salir = true 
+    do {
+      mesNacUsuario = prompt ("Ingrese su mes de nacimiento").toLowerCase()
+      switch(mesNacUsuario){
+        case "enero":
+        salir = false
+        break
+
+        case "febrero":
+        salir = false
+        break
+
+        case "marzo":
+        salir = false
+        break
+
+        case "abril":
+        salir = false
+        break
+
+        case "mayo":
+        salir = false
+        break
+
+        case "junio":
+        salir = false
+        break
+
+        case "julio":
+        salir = false
+        break
+
+        case "agosto":
+        salir = false
+        break
+
+        case "septiembre":
+        salir = false
+        break
+
+        case "octubre":
+        salir = false
+        break
+
+        case "noviembre":
+        salir = false
+        break
+
+        case "diciembre":
+        salir = false
+        break
+      }
+    } while (salir)
+    console.log (mesNacUsuario)
+  }
+
+  anioNacimiento = () =>{
+    let anioNacUsuario = parseInt(prompt ("Ingresa tu año de nacimiento"))
     console.log (anioNacUsuario)
-}
-}
-anioNacimiento()
+    while (anioNacUsuario > 2005 || anioNacUsuario == " " || isNaN(anioNacUsuario)){
+      alert ("Año ingresado incorrectamente.")
+      anioNacUsuario = prompt ("Ingresa tu año de nacimiento")
+      console.log (anioNacUsuario)
+    }
+  }
 
+  nombre()
+  edad()
+  diaNacimiento()
+  mesNacimiento()
+  anioNacimiento()
+}
 
 
 /* Carrito de compra */
-let totalCarrito = 0
-
-let cantidad
 function cantidadProducto(){
   cantidad = parseInt(prompt("Ingresa la cantidad que quieres agregar al carrito"))
 }
@@ -215,7 +239,6 @@ function productos() {
   }
 }
 
-productos();
 
 const eliminarProducto = () => {
   itemEliminar = prompt ("¿Desea eliminar algún producto de su carrito? Si es así, seleccione el número correspondiente al producto a eliminar y sino, presione cancelar:\n 1) Funko Pop! Iron Man $5545.23 \n 2) Funko Pop! Darth Vader $6581.56 \n 3) Juego Funko Verse Rick & Morty $14809.99 \n 4) Pin Spiderman $1209.99 \n 5) Vinyl Soda Superman $4964.64 \n 6) Mochila Avengers $25459.99")
@@ -229,7 +252,6 @@ const eliminarProducto = () => {
   }
   console.log (itemEliminar)
 }
-eliminarProducto()
 
 
 function mostrarCarrito() {
@@ -243,7 +265,6 @@ function mostrarCarrito() {
         carrito.map(producto => "- Nombre: " + producto.nombreProducto + " / Categoria: " + producto.categoria + " / Precio: $" + producto.valor + " / Cantidad: " + producto.cantidad).join("\n") +
         "\nTotal del carrito: $" + Math.floor(totalCarrito));
 }
-mostrarCarrito()
 
 
 /* Envío */
@@ -265,7 +286,6 @@ function envio(){
         alert ("El valor del envío es de $1500")
     }
 }
-envio()
 
 
 /* Venta */
@@ -273,11 +293,9 @@ let totalCompra = totalCarrito + valorEnvio
 function venta(){
     alert ("El total de tu compra incluido el envío es de: $" + Math.floor(totalCompra))
 }
-venta()
 
 
 /* Agradecimiento */
 function agradecimiento(){
     alert(nombreUsuario + "¡Muchas gracias por tu compra! Que la disfrutes!")
 }
-agradecimiento()
