@@ -55,61 +55,21 @@
                     </form>
                   </div>
             </div>
-            <!-- <div>
-              <a class="nav-link" href="../pages/stock.html">ADMIN</a>
-          </div> -->
           </div>
         </div>
     </nav>
 
     <main>
-      <section id="productos" class="productos">
-       
-      </section>
-      <!-- <div class="tiendaLogos">
-        <div>
-          <a href="../pages/pop.html">
-            <img src="../assets/imagenes/popLogo.webp" alt="Logo Pop" id="logoPop">
-          </a>
-        </div>
-  
-        <div>
-          <a href="../pages/vynil.html">
-            <img src="../assets/imagenes/vynilLogo.webp" alt="Logo Vynil" id="logoVynil">
-          </a>
-        </div>
-  
-        <div>
-          <a href="../pages/vynilGold.html">
-            <img src="../assets/imagenes/vynilGoldLogo.png" alt="Logo Vynil Gold" id="logoVynilGold">
-          </a>
-        </div>
-  
-        <div>
-          <a href="../pages/popsies.html">
-            <img src="../assets/imagenes/popsiesLogo.png" alt="Logo Popsies" id="logoPopsies">
-          </a>
-        </div>
-  
-        <div>
-          <a href="../pages/games.html">
-            <img src="../assets/imagenes/gamesLogo.png" alt="Logo Games" id="logoGames">
-          </a>
-        </div>
-  
-        <div>
-          <a href="../pages/pins.html">
-            <img src="../assets/imagenes/pinLogo.png" alt="Logo Pins" id="logoPins">
-          </a>
-        </div>
-  
-        <div>
-          <a href="../pages/accesorios.html">
-            <img src="../assets/imagenes/bagsLogo.png" alt="Logo Accesorios" id="logoAccesorios">
-          </a>
-        </div>
+        <form id="crearProducto" class="formulario">
+            <input type="text" name="nombre" class="inputForm" placeholder="Ingrese nombre de producto" required>
+            <input type="text" name="descripcion" class="inputForm" placeholder="Ingrese la descripción del producto" required>
+            <input type="number" name="precio" class="inputForm" placeholder="Ingrese el precio del producto" required>
+            <button class="btn" id="btnCrear" type="submit">Crear Producto</button>
+        </form>
 
-      </div> -->
+        <section id="productos" class="productos">
+
+        </section>
     </main>
 
     <footer>
@@ -125,7 +85,7 @@ crossorigin="anonymous">
 </script>
 
 <!-- Script Java Script -->
-<script src="../tienda.js"></script>
+<script src="../stock.js"></script>
 
 
 </body>

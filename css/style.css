@@ -135,6 +135,10 @@ nav{
     height: 40px !important;
 }
 
+form input[type="search"]{
+    align-self: center;
+}
+
 
 /* MAIN INDEX*/
 
@@ -252,13 +256,166 @@ iframe{
 
 /* MAIN TIENDA */
 
-.list-group{
-    --bs-list-group-border-color: #9abfe3 !important;
+.tiendaLogos{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    margin-left: 50px;
+    margin-top: 30px;
 }
 
-.list-group-item{
-    font-size: x-large !important;
+.tiendaLogos div {
+    width: 25%; 
+    margin-bottom: 20px;
+  }
+
+
+#logoPop{
+    width: 300px;
+    border-radius: 15px;
 }
+
+#logoVynil{
+    width: 300px;
+    border-radius: 15px;
+}
+
+#logoVynilGold{
+    width: 300px;
+    border-radius: 15px;
+}
+
+#logoPopsies{
+    
+    border-radius: 15px;
+}
+
+#logoGames{
+    width: 300px;
+    border-radius: 15px;
+}
+
+#logoPins{
+    width: 300px;
+    border-radius: 15px;
+}
+
+#logoAccesorios{
+    width: 300px;
+    border-radius: 15px;
+}
+
+/* Main Tienda Pop */
+.productos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.producto{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border: 3px solid grey;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 10px;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+    font-family: "armata";
+    font-weight: bolder;
+}
+
+.producto img{
+    width: 90%;
+}
+
+.producto span{
+    font-weight: bolder;
+    font-family: "armata";
+}
+
+/* STOCK ADMIN */
+.btn{
+    width: 80%;
+    background-color: #1895cf;
+    padding: 10px 15px;
+    border-color: #1895cf;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    font-family: "armata";
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 50%;
+    background-color: #1895cf;
+    margin: 20px;
+    gap: 15px;
+    border-radius: 5px;
+
+}
+
+.formulario input{
+    padding: 10px 15px;
+    border-radius: 5px;
+    flex: 1;
+    
+}
+
+#btnCrear{
+    background-color: white !important;
+    color: black !important;
+    height: 60px;
+    width: 100%;
+}
+
+#crearProducto{
+    margin-top: 30px;
+    translate: 50%;
+}
+
+.editar{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.editar input{
+    padding: 5px 10px;
+    border: 2px solid grey;
+    border-radius: 10px;
+}
+
+.btnCarrito, .btnEliminar, .btnEditar{
+    
+    height: 40px;
+    background-color: #1895cf;
+    padding: 10px 15px;
+    border-color: #1895cf;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: "armata";
+    
+}
+
+.btnEditar{
+    translate: 20%;
+}
+
+.btnEliminar{
+    width: 51%;
+}
+
 
 /* MAIN CONTACTO */
 
@@ -285,4 +442,154 @@ footer{
     font-family: "armata";
     font-size: 25px;
     font-weight: bold;
+}
+
+/* LOGIN ADMIN */
+#mainLoginAdmin{
+    position: relative;
+}
+
+#loginContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:white;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#formLoginAdmin{
+    width: 700px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 10px 15px 10px #ccc;
+    border-radius: 5px;
+    font-family: "armata";
+    font-size: 20px;
+    font-weight: bolder;
+    transform: translate(-50%, -50%, -50%);
+}
+
+form img{
+    width: 280px;
+    height: 280px;
+    
+}
+
+
+.formLogin{
+    border: 1px solid #ccc;
+    width: 80%;
+    padding: 10px;
+    font-family: "armata";
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+
+form button{
+    border: 0;
+    background-color: #1895cf;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 70%;
+    height: 100px;
+    padding: 5px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: white;
+    font-family: "armata";
+    font-size: 20px;
+    font-weight: bold;
+   
+}
+
+/* LOGIN CLIENTE */
+#mainLoginCliente{
+    position: relative;
+    
+}
+
+#loginContainerCliente{
+    position:absolute;
+    translate: 50%;
+    width: 750px;
+    background-color:white;
+    padding: 20px;
+    border-radius: 20px;
+    transform: translate(-10%, 60%);
+    
+}
+
+#formLoginCliente{
+    width: 700px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 10px 15px 10px #ccc;
+    border-radius: 5px;
+    font-family: "armata";
+    font-size: 20px;
+    font-weight: bolder;
+    
+    
+}
+
+form input[type="password"]{
+    border: 1px solid #ccc;
+    width: 80%;
+    padding: 10px;
+    font-family: "armata";
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* REGISTRO CLIENTE */
+#registroContainerCliente{
+    position:absolute;
+    right: 50%;
+    left: 50%;
+    width: 750px;
+    height: 750px;
+    background-color:white;
+    padding: 20px;
+    border-radius: 20px;
+    transform: translate(15%, 45%);
+}
+
+#formRegistroCliente{
+    width: 700px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 10px 15px 10px #ccc;
+    border-radius: 5px;
+    font-family: "armata";
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+form input[type="date"]{
+    border: 1px solid #ccc;
+    width: 80%;
+    padding: 10px;
+    font-family: "armata";
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#fechaNacCliente{
+    color: grey;
+    
 }
