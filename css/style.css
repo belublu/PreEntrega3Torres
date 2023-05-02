@@ -558,16 +558,16 @@ form input[type="password"]{
     right: 50%;
     left: 50%;
     width: 750px;
-    height: 750px;
+    height: 850px;
     background-color:white;
     padding: 20px;
     border-radius: 20px;
-    transform: translate(15%, 45%);
+    transform: translate(15%, 35%);
 }
 
 #formRegistroCliente{
     width: 700px;
-    height: 700px;
+    height: 800px;
     display: flex;
     flex-direction: column;
     gap: 10px;
