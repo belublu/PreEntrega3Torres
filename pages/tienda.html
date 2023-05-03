@@ -33,6 +33,7 @@
             <div class="col-2 btn-group-vertical mb-5" role="group">
                 <button class="mb-1 mx-auto me-2" id="botonLogin"><a class="linkBotones" href="../pages/loginRegistroCliente.html">Login Usuario</a ></button>
                 <button class="mx-auto me-2" id="botonRegistro"><a class="linkBotones" href="../pages/loginAdmin.html">Login Admin</a></button>
+                <h3 class="carrito mx-auto me-3" id="verCarrito">Carrito</h3>
             </div>
         </div>
     </header>
@@ -52,64 +53,20 @@
                     <form class="d-flex" role="search">
                       <input class="form-control me-1 mt-1" type="search" aria-label="Search">
                       <button class="btn" type="submit">Buscar</button>
+                      
                     </form>
-                  </div>
+              </div>
+              <div id="carrito" class="carrito"></div>
+              <div id="modalCont" class="modalContainer"></div>
             </div>
-            <!-- <div>
-              <a class="nav-link" href="../pages/stock.html">ADMIN</a>
-          </div> -->
           </div>
         </div>
     </nav>
 
     <main>
-      <section id="productos" class="productos">
-       
-      </section>
-      <!-- <div class="tiendaLogos">
-        <div>
-          <a href="../pages/pop.html">
-            <img src="../assets/imagenes/popLogo.webp" alt="Logo Pop" id="logoPop">
-          </a>
-        </div>
-  
-        <div>
-          <a href="../pages/vynil.html">
-            <img src="../assets/imagenes/vynilLogo.webp" alt="Logo Vynil" id="logoVynil">
-          </a>
-        </div>
-  
-        <div>
-          <a href="../pages/vynilGold.html">
-            <img src="../assets/imagenes/vynilGoldLogo.png" alt="Logo Vynil Gold" id="logoVynilGold">
-          </a>
-        </div>
-  
-        <div>
-          <a href="../pages/popsies.html">
-            <img src="../assets/imagenes/popsiesLogo.png" alt="Logo Popsies" id="logoPopsies">
-          </a>
-        </div>
-  
-        <div>
-          <a href="../pages/games.html">
-            <img src="../assets/imagenes/gamesLogo.png" alt="Logo Games" id="logoGames">
-          </a>
-        </div>
-  
-        <div>
-          <a href="../pages/pins.html">
-            <img src="../assets/imagenes/pinLogo.png" alt="Logo Pins" id="logoPins">
-          </a>
-        </div>
-  
-        <div>
-          <a href="../pages/accesorios.html">
-            <img src="../assets/imagenes/bagsLogo.png" alt="Logo Accesorios" id="logoAccesorios">
-          </a>
-        </div>
+      <section id="tienda" class="tienda">
 
-      </div> -->
+      </section>
     </main>
 
     <footer>
@@ -125,7 +82,9 @@ crossorigin="anonymous">
 </script>
 
 <!-- Script Java Script -->
-<script src="../tienda.js"></script>
+<script src="../js/tienda.js"></script>
+
+
 
 
 </body>

@@ -1,10 +1,11 @@
 /* Administrador - Crear, editar y borrar productos */
 class Producto{
-    constructor(id, nombre, descripcion, precio){
+    constructor(id, nombre, descripcion, precio, cantidad){
         this.id = id
         this.nombre = nombre
         this.descripcion = descripcion
-        this.precio = parseFloat(precio) 
+        this.precio = parseFloat(precio)
+        this.cantidad = 1
     }
 }
   
@@ -15,7 +16,7 @@ productosAlmacenados.forEach((producto) =>{
         producto.id,
         producto.nombre,
         producto.descripcion,
-        producto.precio
+        producto.precio,
     ))
 })
 
@@ -101,5 +102,6 @@ const verProductos = ()=>{
 }
 verProductos()
 crearProducto()
+
 
 
