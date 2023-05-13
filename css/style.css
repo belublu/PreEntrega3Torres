@@ -456,6 +456,10 @@ iframe{
    width: inherit; 
 }
 
+.fotoProdTienda{
+    width: inherit;
+}
+
 
 .tituloProdTienda{
     font-size: 28px;

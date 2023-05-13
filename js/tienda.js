@@ -5,39 +5,54 @@ const modalContainer = document.getElementById("modalCont")
 
 const productos = JSON.parse(localStorage.getItem("productos")) || []
 
-const contenedorProductos = document.querySelector("#tienda")
-productos.forEach(producto => {
-    const tarjetaProducto = document.createElement("div")
-    tarjetaProducto.className = "productosTienda"
-    tarjetaProducto.innerHTML = `
-                                <img src="../assets/imagenes/popLogo.webp" class="imgProdTienda" alt="Foto producto tienda">
-                                <h3 class="tituloProdTienda">${producto.nombre}</h3>
-                                <p class="descripProdTienda">${producto.descripcion}</p>
-                                <span class="precioProdTienda">$ ${producto.precio}</span>
-                                <button class="btnCarritoTienda">Agregar al carrito</button>
-                            `
-contenedorProductos.append(tarjetaProducto)
+const getProducts = async () => {
+    const response = await fetch("../js/productos.json")
+    const productos = await response.json()
+    const contenedorProductos = document.querySelector("#tienda")
+    productos.forEach(producto => {
+        const tarjetaProducto = document.createElement("div")
+        tarjetaProducto.className = "productosTienda"
+        tarjetaProducto.innerHTML = `
+                                    <img class="fotoProdTienda" src="${producto.img}" alt="Foto producto tienda">
+                                    <h3 class="tituloProdTienda">${producto.nombre}</h3>
+                                    <p class="descripProdTienda">${producto.descripcion}</p>
+                                    <span class="precioProdTienda">$ ${producto.precio}</span>
+                                    <p>Cantidad: ${producto.cantidad}</p>
+                                    <p>Total: ${producto.cantidad * producto.precio}</p>
+                                    
+                                `
+    contenedorProductos.append(tarjetaProducto)
 
-tarjetaProducto.addEventListener("click", (e)=>{
-    const productoRepetido = carrito.some((productoRepe)=> productoRepe.id === producto.id)
+    let comprar = document.createElement("button")
+    comprar.innerText = "Agregar al carrito"
+    comprar.className = "btnCarritoTienda"
+    tarjetaProducto.append(comprar)
 
-    if(productoRepetido === true){
-        carrito.map((producto)=>{
-            if(producto.id === producto.id){
-                producto.cantidad++
-            }
-        })
-    }else{
-        carrito.push({
-            id: producto.id,
-            nombre: producto.nombre,
-            descripcion: producto.descripcion,
-            precio: producto.precio,
-            cantidad: 1
-        })
-    }
+    comprar.addEventListener("click", (e)=>{
+        const productoRepetido = carrito.some((productoRepe)=> productoRepe.id === producto.id)
+
+        if(productoRepetido){
+            carrito = carrito.map((productoCarrito)=>{
+                if(productoCarrito.id === producto.id){
+                    productoCarrito.cantidad++
+                }
+                return productoCarrito
+            })
+        }else{
+            carrito.push({
+                id: producto.id,
+                nombre: producto.nombre,
+                descripcion: producto.descripcion,
+                precio: producto.precio,
+                cantidad: 1
+            })
+        }
+        
     })
 })
+}
+getProducts()
+
 
 
 /* CARRITO */
@@ -90,7 +105,7 @@ const carritoCliente = ()=>{
 
 verCarrito.addEventListener("click", carritoCliente)
 
-const eliminarProductoCarrito = ()=>{
+const eliminarProductoCarrito = (productoId)=>{
     const buscarId = carrito.find((element)=> element.id)
     carrito = carrito.filter((carritoId)=>{
         return carritoId !== buscarId
