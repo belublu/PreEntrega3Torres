@@ -18,7 +18,7 @@ const getProducts = async () => {
                                     <p class="descripProdTienda">${producto.descripcion}</p>
                                     <span class="precioProdTienda">$ ${producto.precio}</span>
                                     <p>Cantidad: ${producto.cantidad}</p>
-                                    <p>Total: ${producto.cantidad * producto.precio}</p>
+                                    <p>Total: $ ${producto.cantidad * producto.precio}</p>
                                     
                                 `
     contenedorProductos.append(tarjetaProducto)
@@ -81,10 +81,26 @@ const carritoCliente = ()=>{
                             <img src="../assets/imagenes/popLogo.webp" class="imgProdTienda" alt="Foto producto tienda">
                             <h3 class="productoModal">${producto.nombre}</h3>
                             <p class="precioModal">$ ${producto.precio}</p>
+                            <span class="menos"> - </span>
                             <p class="cantidadModal">Cantidad: ${producto.cantidad}</p>
+                            <span class="mas"> + </span>
                             <p class="subtotalModal">Subtotal: ${producto.cantidad * producto.precio}</p>
                         `
         modalContainer.append(carritoContainer)
+
+        const menos = carritoContainer.querySelector(".menos")
+        menos.addEventListener("click", () => {
+            if(producto.cantidad != 1){
+                producto.cantidad --
+            }
+            carritoCliente()
+        })
+
+        const mas = carritoContainer.querySelector(".mas")
+        mas.addEventListener("click", () => {
+            producto.cantidad ++
+            carritoCliente()
+        })
 
         let eliminarProducto = document.createElement("span")
         eliminarProducto.innerText = "Eliminar"
@@ -113,3 +129,12 @@ const eliminarProductoCarrito = (productoId)=>{
 
     carritoCliente()
 }
+
+const contadorProdCarrito = () => {
+    cantidadCarrito.style.display = "block"
+    const carritoTam = carritoTam.length
+    localStorage.setItem ("carritoTam", JSON.stringify(carritoTam))
+    cantidadCarrito.innerText = JSON.parse(localStorage.getItem(carritoTam))
+}
+contadorProdCarrito()
+
