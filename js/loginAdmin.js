@@ -1,5 +1,4 @@
 /* LOGIN ADMIN */
-
 const botonAdmin = document.querySelector("#botonAdmin")
 botonAdmin.addEventListener("click", (e) => {
     e.preventDefault()

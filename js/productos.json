@@ -18,7 +18,4 @@
     {"id": 9, "nombre": "Back in time", "descripcion": "Games", "licencia": "Back to the future", "precio": 40750, "img": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw55973935/images/funko/upload/48720_BTTF_BeautyShot_200501.png?sw=800&sh=800", "cantidad": 1},
 
     {"id": 10, "nombre": "Jim Halpert", "descripcion": "Popsies", "licencia": "The Office", "precio": 4700, "img": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwddd8b4a5/images/funko/60226-1.png?sw=800&sh=800", "cantidad": 1}
-
-
-
 ]

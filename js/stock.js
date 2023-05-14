@@ -7,7 +7,6 @@ class Producto{
         this.licencia = licencia
         this.precio = parseFloat(precio)
         this.cantidad = 1
-        
     }
 }
   
@@ -22,7 +21,6 @@ productosAlmacenados.forEach((producto) =>{
         producto.precio,
     ))
 })
-
 
 const eliminarProducto = (id)=>{
     const eliminarProductoBtn = document.querySelector("#btnEliminar" + id)
@@ -86,8 +84,6 @@ const verProducto = (producto)=>{
                                     
                                     <button class="btnEliminar" id="btnEliminar${producto.id}">Eliminar</button>
                                 `
-
-                               
     contenedorProductos.append(tarjetaProducto)
     eliminarProducto(producto.id)
     editarProducto(producto.id)

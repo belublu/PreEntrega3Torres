@@ -144,19 +144,7 @@ const carritoCliente = ()=>{
               )
               eliminarProductoCarrito(producto.id);  
             }
-          })
-
-          /* Toastify({
-            text: "Eliminaste el producto del carrito",
-            duration: 3000,
-            className: "toastifyTexto",
-            style: {
-              background: "linear-gradient(to right, #1895cf, #1ec6ff)",
-              border: "solid 3px #5895cf",
-            },
-            close: true,
-            }).showToast(); */
-            
+          })           
           });
     })
 
@@ -201,12 +189,3 @@ const eliminarProductoCarrito = (productoId) => {
 const guardarCarritoEnLocalStorage = () => {
     localStorage.setItem("carrito", JSON.stringify(carrito));
 };
-    
-/* const contadorProdCarrito = () => {
-    cantidadCarrito.style.display = "block"
-    const carritoTam = carritoTam.length
-    localStorage.setItem ("carritoTam", JSON.stringify(carritoTam))
-    cantidadCarrito.innerText = JSON.parse(localStorage.getItem(carritoTam))
-}
-contadorProdCarrito() */
-
