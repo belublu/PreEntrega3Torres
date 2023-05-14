@@ -8,6 +8,9 @@
 <!-- CSS -->
 <link rel="stylesheet" href="../css/style.css">
 
+<!-- Librería Toastify -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
 <!-- Boostrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
     rel="stylesheet" 
@@ -33,7 +36,8 @@
             <div class="col-2 btn-group-vertical mb-5" role="group">
                 <button class="mb-1 mx-auto me-2" id="botonLogin"><a class="linkBotones" href="../pages/loginRegistroCliente.html">Login Usuario</a ></button>
                 <button class="mx-auto me-2" id="botonRegistro"><a class="linkBotones" href="../pages/loginAdmin.html">Login Admin</a></button>
-                <h3 class="carrito mx-auto me-3" id="verCarrito">Carrito</h3>
+                <img class="carrito mx-auto me-5" id="verCarrito" src="../assets/imagenes/shoppingCart.png" alt="">
+                <!-- <h3 class="carrito mx-auto me-3" id="verCarrito">Carrito</h3> -->
             </div>
         </div>
     </header>
@@ -56,7 +60,9 @@
                       
                     </form>
               </div>
-              <div id="carrito" class="carrito"></div>
+              <div id="carrito" class="carrito">
+
+              </div>
               <div id="modalCont" class="modalContainer"></div>
             </div>
           </div>
@@ -75,7 +81,7 @@
         </div>
     </footer>
     
-    <!-- Script Boostrap -->
+<!-- Script Boostrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
 integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" 
 crossorigin="anonymous">
@@ -83,10 +89,13 @@ crossorigin="anonymous">
 
 <!-- Script Java Script -->
 <script src="../js/tienda.js"></script>
+<script src="../js/loginAdmin.js"></script>
 
+<!-- Script Librería Toastify -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
-
-
+<!-- Script Librería Sweet Alert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 </html>

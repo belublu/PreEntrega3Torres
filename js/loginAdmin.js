@@ -1,4 +1,19 @@
 /* LOGIN ADMIN */
+
+const botonAdmin = document.querySelector("#botonRegistro")
+botonAdmin.addEventListener("click", (e) => {
+    e.preventDefault()
+    Swal.fire({
+        position: 'center',
+        icon: 'warning',
+        title: 'Escriba su nombre y legajo tal cual como fue registrado en su inscripción presencial.',
+        showConfirmButton: false,
+        timer: 3000
+    }).then (() => {
+        window.location.href = "../pages/loginAdmin.html"
+      })
+})
+
 let count = 100
 const nombresAdmins = []
 class Administrador{
@@ -26,8 +41,22 @@ formLoginAdmin.addEventListener("submit", (e)=>{
     if (nombresAdmins.some((admin)=> admin.nombre === adminValido && admin.legajo === Number(legajoValido))) {
         localStorage.setItem("admin", adminValido)
         localStorage.setItem("legajo", legajoValido)
-        window.location.href = "../pages/stock.html"
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Bienvenido!',
+            showConfirmButton: false,
+            timer: 2500
+          }).then (() => {
+            window.location.href = "../pages/stock.html"
+            })
     }else {
-        console.log("El nombre del administrador no coincide con el legajo")
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'El nombre del administrador <br> o legajo no son correctos',
+            showConfirmButton: false,
+            timer: 2000
+          })
     }
 })

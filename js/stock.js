@@ -24,6 +24,16 @@ productosAlmacenados.forEach((producto) =>{
 const eliminarProducto = (id)=>{
     const eliminarProductoBtn = document.querySelector("#btnEliminar" + id)
     eliminarProductoBtn.addEventListener("click", ()=>{
+        Toastify({
+            text: "Producto eliminado",
+            duration: 3000,
+            className: "toastifyTexto",
+            style: {
+                background: "linear-gradient(to right, #1895cf, #1ec6ff)",
+                border: "solid 3px #5895cf",
+            },
+            close: true,
+            }).showToast();
         const index = productos.findIndex((producto) => producto.id == id)
         productos.splice(index, 1)
         localStorage.setItem("productos", JSON.stringify(productos))
@@ -35,6 +45,16 @@ const eliminarProducto = (id)=>{
 const editarProducto = (id) =>{
     const editarProductoFormulario = document.querySelector("#editar" + id)
     editarProductoFormulario.addEventListener("submit", (e)=>{
+        Toastify({
+            text: "Producto editado",
+            duration: 3000,
+            className: "toastifyTexto",
+            style: {
+                background: "linear-gradient(to right, #1895cf, #1ec6ff)",
+                border: "solid 3px #5895cf",
+            },
+            close: true,
+            }).showToast();
         e.preventDefault()
         const datos = e.target.children
         const index = productos.findIndex((producto) => producto.id == id)
@@ -42,9 +62,6 @@ const editarProducto = (id) =>{
         productos[index].descripcion = datos["descripcion"].value
         productos[index].precio = datos["precio"].value
         localStorage.setItem("productos", JSON.stringify(productos))
-
-
-
     })
 }
 
@@ -89,19 +106,23 @@ formularioCrearProd.addEventListener("submit", (e)=>{
     idProducto++
     localStorage.setItem("idProducto", idProducto)
     verProducto(producto)
-    
 })
 }
 
-
-const verProductos = ()=>{
-    productos.forEach(producto => {
-        verProducto(producto)
-
-    })
-}
-verProductos()
-crearProducto()
-
-
-
+const verProductos = () => {
+    productosAlmacenados.forEach((producto) => {
+      productos.push(new Producto(
+        producto.id,
+        producto.nombre,
+        producto.descripcion,
+        producto.precio
+      ));
+    });
+  
+    productos.forEach((producto) => {
+      verProducto(producto);
+    });
+  };
+  
+  verProductos();
+  crearProducto();

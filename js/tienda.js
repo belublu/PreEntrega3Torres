@@ -1,5 +1,5 @@
 /* PRODUCTOS EN TIENDA */
-let carrito = []
+let carrito = JSON.parse(localStorage.getItem("carrito")) || []
 const verCarrito = document.getElementById("verCarrito")
 const modalContainer = document.getElementById("modalCont")
 
@@ -28,30 +28,44 @@ const getProducts = async () => {
     comprar.className = "btnCarritoTienda"
     tarjetaProducto.append(comprar)
 
-    comprar.addEventListener("click", (e)=>{
-        const productoRepetido = carrito.some((productoRepe)=> productoRepe.id === producto.id)
+    comprar.addEventListener("click", (e) => {
+        Toastify({
+            text: "Agregaste el producto al carrito",
+            duration: 3000,
+            className: "toastifyTexto",
+            style: {
+                background: "linear-gradient(to right, #1895cf, #1ec6ff)",
+                border: "solid 3px #5895cf",
+            },
+            close: true,
+            }).showToast();
 
-        if(productoRepetido){
-            carrito = carrito.map((productoCarrito)=>{
-                if(productoCarrito.id === producto.id){
-                    productoCarrito.cantidad++
-                }
-                return productoCarrito
-            })
-        }else{
-            carrito.push({
-                id: producto.id,
-                nombre: producto.nombre,
-                descripcion: producto.descripcion,
-                precio: producto.precio,
-                cantidad: 1
-            })
+        const productoRepetido = carrito.some(
+          (productoRepe) => productoRepe.id === producto.id
+        );
+  
+        if (productoRepetido) {
+          carrito = carrito.map((productoCarrito) => {
+            if (productoCarrito.id === producto.id) {
+              productoCarrito.cantidad++;
+            }
+            return productoCarrito;
+          });
+        } else {
+          carrito.push({
+            id: producto.id,
+            img: producto.img,
+            nombre: producto.nombre,
+            descripcion: producto.descripcion,
+            precio: producto.precio,
+            cantidad: 1,
+          });
         }
-        
-    })
-})
-}
-getProducts()
+        guardarCarritoEnLocalStorage();
+      });
+    });
+  };
+  getProducts();
 
 
 
@@ -66,8 +80,10 @@ const carritoCliente = ()=>{
                         `
     modalContainer.append(modalHeader)
 
-    const modalBoton = document.createElement("h1")
-    modalBoton.innerText = "Cerrar"
+    const modalBoton = document.createElement("div")
+    modalBoton.innerHTML = `
+                          <img class="iconCierre" src="../assets/imagenes/closeIcon.png" alt="">
+                          `
     modalBoton.className = "modalHeaderBoton"
     modalBoton.addEventListener("click", ()=>{
         modalContainer.style.display = "none"
@@ -78,13 +94,14 @@ const carritoCliente = ()=>{
         const carritoContainer = document.createElement("div")
         carritoContainer.className = "modal-content"
         carritoContainer.innerHTML = `
-                            <img src="../assets/imagenes/popLogo.webp" class="imgProdTienda" alt="Foto producto tienda">
-                            <h3 class="productoModal">${producto.nombre}</h3>
+                            <img class="fotoProdModal" src="${producto.img}" alt="Foto producto tienda">
+                            <p class="productoModal">${producto.nombre}</p>
+                            <p class="descripModal">${producto.descripcion}</p>
                             <p class="precioModal">$ ${producto.precio}</p>
                             <span class="menos"> - </span>
                             <p class="cantidadModal">Cantidad: ${producto.cantidad}</p>
                             <span class="mas"> + </span>
-                            <p class="subtotalModal">Subtotal: ${producto.cantidad * producto.precio}</p>
+                            <p class="subtotalModal">Subtotal: $ ${producto.cantidad * producto.precio}</p>
                         `
         modalContainer.append(carritoContainer)
 
@@ -93,12 +110,14 @@ const carritoCliente = ()=>{
             if(producto.cantidad != 1){
                 producto.cantidad --
             }
+            guardarCarritoEnLocalStorage();
             carritoCliente()
         })
 
         const mas = carritoContainer.querySelector(".mas")
         mas.addEventListener("click", () => {
             producto.cantidad ++
+            guardarCarritoEnLocalStorage();
             carritoCliente()
         })
 
@@ -107,7 +126,38 @@ const carritoCliente = ()=>{
         eliminarProducto.className = "eliminarProducto"
         carritoContainer.append(eliminarProducto)
 
-        eliminarProducto.addEventListener("click", eliminarProductoCarrito)
+        eliminarProducto.addEventListener("click", () => {
+          Swal.fire({
+            title: 'Estás seguro que querés eliminar el producto?',
+            text: 'Luego, si querés lo podés agregar nuevamente desde la tienda.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, lo quiero eliminar!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                'Eliminado!',
+                'El producto ha sido eliminado del carrito.',
+                'success'
+              )
+              eliminarProductoCarrito(producto.id);  
+            }
+          })
+
+          /* Toastify({
+            text: "Eliminaste el producto del carrito",
+            duration: 3000,
+            className: "toastifyTexto",
+            style: {
+              background: "linear-gradient(to right, #1895cf, #1ec6ff)",
+              border: "solid 3px #5895cf",
+            },
+            close: true,
+            }).showToast(); */
+            
+          });
     })
 
     const totalCarrito = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0)
@@ -117,19 +167,41 @@ const carritoCliente = ()=>{
                             El total a pagar es: $ ${totalCarrito}
                         `
     modalContainer.append(totalCompra)
+
+    const modalBotonDos = document.createElement("div")
+    modalBotonDos.innerText = "Finalizar compra"
+    modalBotonDos.className = "modalFinalCompraBoton"
+    modalBotonDos.addEventListener("click", ()=>{
+        Swal.fire({
+            title: 'Muchas gracias por tu compra! <br> Que la disfrutes!!',
+            width: 600,
+            padding: '6em',
+            color: "#3c3c3c",
+            background: '#fff url(/assets/imagenes/backDos.avif)' ,
+            backdrop: `
+              rgba(0,0,123,0.4)
+              url("/assets/imagenes/funkoBlue.gif")
+              left top
+              no-repeat
+            `
+          })
+        modalContainer.style.display = "none"
+    })
+    modalContainer.append(modalBotonDos)
 }
 
 verCarrito.addEventListener("click", carritoCliente)
 
-const eliminarProductoCarrito = (productoId)=>{
-    const buscarId = carrito.find((element)=> element.id)
-    carrito = carrito.filter((carritoId)=>{
-        return carritoId !== buscarId
-    })
+const eliminarProductoCarrito = (productoId) => {
+    carrito = carrito.filter((producto) => producto.id !== productoId);
+    guardarCarritoEnLocalStorage();
+    carritoCliente();
+    };
 
-    carritoCliente()
-}
-
+const guardarCarritoEnLocalStorage = () => {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+};
+    
 const contadorProdCarrito = () => {
     cantidadCarrito.style.display = "block"
     const carritoTam = carritoTam.length
