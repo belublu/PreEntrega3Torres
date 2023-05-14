@@ -1,23 +1,23 @@
 [
-    {"id": 1, "nombre": "Iron Man", "descripcion": "Pop 580", "precio": 5900, "img": "https://m.media-amazon.com/images/I/61CqVp8GE3L._AC_SL1001_.jpg", "cantidad": 1},
+    {"id": 1, "nombre": "Iron Man Infinity War", "descripcion": "Pop 285", "licencia": "Marvel", "precio": 5900, "img": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwfcccfe3e/images/funko/26463-2.png?sw=800&sh=800", "cantidad": 1},
 
-    {"id": 2, "nombre": "Batman", "descripcion": "Pop 144", "precio": 7900, "img": "https://http2.mlstatic.com/D_NQ_NP_965709-MLA49854265907_052022-O.jpg", "cantidad": 1},
+    {"id": 2, "nombre": "Batman Super Héroes", "descripcion": "Pop 144", "licencia": "DC", "precio": 7900, "img": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw41bb6e49/images/funko/11496-PX-1MA-2.png?sw=800&sh=800", "cantidad": 1},
 
-    {"id": 3, "nombre": "Beast Boy", "descripcion": "Vynil Soda", "precio": 5400, "img": "https://media.entertainmentearth.com/assets/images/89ee1ac6f0ce43d298cb4077898d1293xl.jpg", "cantidad": 1},
+    {"id": 3, "nombre": "Robin Teen Titans", "descripcion": "Vynil Soda", "licencia": "DC", "precio": 5400, "img": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwddf3291e/images/funko/63850-2.png?sw=800&sh=800", "cantidad": 1},
 
-    {"id": 4, "nombre": "SpiderMan", "descripcion": "Pin", "precio": 1900, "img": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwe611d047/images/funko/upload/MVPP0089_LPP_SPIDERMAN_TOM_HOLLAND_GROUP_BOX.png?sw=800&sh=800", "cantidad": 1},
+    {"id": 4, "nombre": "SpiderMan Glow", "descripcion": "Pin", "licencia": "Marvel", "precio": 1900, "img": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwafd8bee6/images/funko/upload/MVPP0085_LPP_SPIDERMAN_ANDREW_GARFIELD_BOX.png?sw=800&sh=800", "cantidad": 1},
 
-    {"id": 5, "nombre": "Avengers Infinity Saga", "descripcion": "Mochila 35 lt.", "precio": 35900, "img": "https://m.media-amazon.com/images/I/91pB6xl750L._AC_UF894,1000_QL80_.jpg", "cantidad": 1},
+    {"id": 5, "nombre": "Jazmin 30 aniversario", "descripcion": "Mochila Pop 20 lt.", "licencia": "Disney", "precio": 35900, "img": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwa687da1b/images/loungefly/upload/WDBK2799-OPBYLFDISNEY30THANNIVERSARYALADDINPALACEOPANDMINIBACKPACK0815OPEN.png?sw=346&sh=346", "cantidad": 1},
 
-    {"id": 6, "nombre": "Bella Poarch", "descripcion": "Vynil Gold", "precio": 6300, "img": "https://cdn.shopify.com/s/files/1/0438/0252/5861/products/limited-edition-889698670197-C_1200x1200.jpg?v=1674937134", "cantidad": 1},
+    {"id": 6, "nombre": "Bella Poarch", "descripcion": "Vynil Gold", "licencia": "Cantantes", "precio": 6300, "img": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwf9392bbd/images/funko/67019-2.png?sw=800&sh=800", "cantidad": 1},
 
-    {"id": 7, "nombre": "Michael Scott", "descripcion": "Popsies", "precio": 4700, "img": "    https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw30ddeee0/images/funko/60228-1.png?sw=800&sh=800", "cantidad": 1},
+    {"id": 7, "nombre": "Michael Scott", "descripcion": "Popsies", "licencia": "The Office", "precio": 4700, "img": "    https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw30ddeee0/images/funko/60228-1.png?sw=800&sh=800", "cantidad": 1},
 
-    {"id": 8, "nombre": "Stitch", "descripcion": "Plush", "precio": 12900, "img": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwc0907449/images/funko/upload/60311_LiloAndStitch_StitchWithHeart_PLUSH_GLAM-1-HT-WEB.png?sw=800&sh=800", "cantidad": 1},
+    {"id": 8, "nombre": "Stitch", "descripcion": "Plush", "licencia": "Disney", "precio": 12900, "img": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwc0907449/images/funko/upload/60311_LiloAndStitch_StitchWithHeart_PLUSH_GLAM-1-HT-WEB.png?sw=800&sh=800", "cantidad": 1},
 
-    {"id": 9, "nombre": "FunkoVerse Harry Potter", "descripcion": "Games", "precio": 40750, "img": "https://m.media-amazon.com/images/I/81RNV-iTWJL.jpg", "cantidad": 1},
+    {"id": 9, "nombre": "Back in time", "descripcion": "Games", "licencia": "Back to the future", "precio": 40750, "img": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw55973935/images/funko/upload/48720_BTTF_BeautyShot_200501.png?sw=800&sh=800", "cantidad": 1},
 
-    {"id": 10, "nombre": "Jim Halpert", "descripcion": "Popsies", "precio": 4700, "img": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwddd8b4a5/images/funko/60226-1.png?sw=800&sh=800", "cantidad": 1}
+    {"id": 10, "nombre": "Jim Halpert", "descripcion": "Popsies", "licencia": "The Office", "precio": 4700, "img": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwddd8b4a5/images/funko/60226-1.png?sw=800&sh=800", "cantidad": 1}
 
 
 

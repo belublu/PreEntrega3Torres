@@ -78,7 +78,7 @@ a:link, :visited, :active{
     color: white;
 }
 
-#botonRegistro{
+#botonAdmin{
     width: 150px;
     height:40px;
     color: black;
@@ -89,16 +89,16 @@ a:link, :visited, :active{
     font-weight: bold;
 }
 
-#botonRegistro a{
+#botonAdmin a{
     color: black;
 }
 
-#botonRegistro:hover{
+#botonAdmin:hover{
     background-color: #1895cf;
     color: white !important;
 }
 
-#botonRegistro a:hover{
+#botonAdmin a:hover{
     color: white;
 }
 
@@ -439,12 +439,12 @@ iframe{
     width: 400px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
     border: 3px solid grey;
     box-shadow: 2px 4px 8px 0 #1895cf;
     border-radius: 5px;
     overflow: hidden;
-    margin: 10px;
+    margin: 20px;
     padding: 20px;
     align-items: center;
     text-align: center;
@@ -457,7 +457,9 @@ iframe{
 }
 
 .fotoProdTienda{
-    width: inherit;
+    
+    
+    width: 80%;
 }
 
 
@@ -493,7 +495,6 @@ iframe{
     font-weight: bold;
     font-size: 18px;
     font-family: "armata";
-    
 }
 
 /* MODAL TIENDA */
@@ -561,7 +562,7 @@ iframe{
 }
 
 .iconCierre{
-    height: 40px;
+    height: 25px;
     margin: 10px;
 }
 

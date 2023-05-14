@@ -7,19 +7,19 @@ const productos = JSON.parse(localStorage.getItem("productos")) || []
 
 const getProducts = async () => {
     const response = await fetch("../js/productos.json")
-    const productos = await response.json()
+    const productosJson = await response.json()
+    productos.unshift(...productosJson)
     const contenedorProductos = document.querySelector("#tienda")
     productos.forEach(producto => {
         const tarjetaProducto = document.createElement("div")
         tarjetaProducto.className = "productosTienda"
         tarjetaProducto.innerHTML = `
-                                    <img class="fotoProdTienda" src="${producto.img}" alt="Foto producto tienda">
+                                    <img class="fotoProdTienda" src="${producto.img}" alt="">
                                     <h3 class="tituloProdTienda">${producto.nombre}</h3>
+                                    <p class="descripProdTienda">${producto.licencia}</p>
                                     <p class="descripProdTienda">${producto.descripcion}</p>
-                                    <span class="precioProdTienda">$ ${producto.precio}</span>
+                                    <span class="precioProdTienda">$ ${parseFloat(producto.precio).toLocaleString("es-AR")}</span>
                                     <p>Cantidad: ${producto.cantidad}</p>
-                                    <p>Total: $ ${producto.cantidad * producto.precio}</p>
-                                    
                                 `
     contenedorProductos.append(tarjetaProducto)
 
@@ -97,11 +97,11 @@ const carritoCliente = ()=>{
                             <img class="fotoProdModal" src="${producto.img}" alt="Foto producto tienda">
                             <p class="productoModal">${producto.nombre}</p>
                             <p class="descripModal">${producto.descripcion}</p>
-                            <p class="precioModal">$ ${producto.precio}</p>
+                            <p class="precioModal">$ ${parseFloat(producto.precio).toLocaleString("es-AR")}</p>
                             <span class="menos"> - </span>
                             <p class="cantidadModal">Cantidad: ${producto.cantidad}</p>
                             <span class="mas"> + </span>
-                            <p class="subtotalModal">Subtotal: $ ${producto.cantidad * producto.precio}</p>
+                            <p class="subtotalModal">Subtotal: $${(producto.cantidad * parseFloat(producto.precio)).toLocaleString("es-AR")}</p>
                         `
         modalContainer.append(carritoContainer)
 
@@ -134,7 +134,7 @@ const carritoCliente = ()=>{
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Si, lo quiero eliminar!'
+            confirmButtonText: 'Si, eliminar'
           }).then((result) => {
             if (result.isConfirmed) {
               Swal.fire(
@@ -164,7 +164,7 @@ const carritoCliente = ()=>{
     const totalCompra = document.createElement("div")
     totalCompra.className = "totalCompra"
     totalCompra.innerHTML = `
-                            El total a pagar es: $ ${totalCarrito}
+                            El total a pagar es: $ ${parseFloat(totalCarrito).toLocaleString("es-AR")}
                         `
     modalContainer.append(totalCompra)
 
@@ -175,7 +175,7 @@ const carritoCliente = ()=>{
         Swal.fire({
             title: 'Muchas gracias por tu compra! <br> Que la disfrutes!!',
             width: 600,
-            padding: '6em',
+            padding: '5em',
             color: "#3c3c3c",
             background: '#fff url(/assets/imagenes/backDos.avif)' ,
             backdrop: `
@@ -202,11 +202,11 @@ const guardarCarritoEnLocalStorage = () => {
     localStorage.setItem("carrito", JSON.stringify(carrito));
 };
     
-const contadorProdCarrito = () => {
+/* const contadorProdCarrito = () => {
     cantidadCarrito.style.display = "block"
     const carritoTam = carritoTam.length
     localStorage.setItem ("carritoTam", JSON.stringify(carritoTam))
     cantidadCarrito.innerText = JSON.parse(localStorage.getItem(carritoTam))
 }
-contadorProdCarrito()
+contadorProdCarrito() */
 
